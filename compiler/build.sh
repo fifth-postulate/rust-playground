@@ -16,7 +16,6 @@ for channel in $channels_to_build; do
 
     docker pull "${full_name}"
     docker build -t "${full_name}" \
-           --cache-from "${full_name}" \
            --build-arg channel="${channel}" \
            .
     docker tag "${full_name}" "${image_name}"
